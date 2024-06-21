@@ -10,9 +10,9 @@ export default function Home() {
      <Navbar />
 
      <div className="flex justify-between px-20 h-fit mt-8">
-      <Search />
+      
 
-      <Filter />
+      
      </div>
 
      <Main  />

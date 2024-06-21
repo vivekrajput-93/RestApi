@@ -1,8 +1,15 @@
-import React from "react";
+"use client";
 
-const Search = () => {
+import React from 'react';
+
+interface SearchProps {
+  setSearchTerm: (term: string) => void;
+}
+
+const Search: React.FC<SearchProps> = ({ setSearchTerm }) => {
+  
   return (
-    <div className=" search flex gap-3  rounded-lg  px-4 py-4 w-1/3">
+    <div className="search flex gap-3 rounded-lg px-4 py-4 w-1/3 absolute left-12 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -18,7 +25,12 @@ const Search = () => {
         />
       </svg>
 
-      <input type="text" placeholder="Search for a country...." className="outline-none font-semibold " />
+      <input
+        type="text"
+        placeholder="Search for a country...."
+        className="outline-none font-semibold"
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
     </div>
   );
 };
